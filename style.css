@@ -1,0 +1,112 @@
+/* Define o estilo básico para o body */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Altura total da tela */
+    display: flex;
+    flex-direction: column; /* Permite alinhar elementos no eixo vertical */
+    justify-content: flex-end; /* Mantém as formas na parte inferior */
+    align-items: center; /* Centraliza horizontalmente */
+    background: linear-gradient(to bottom, #007bff, #00C8FF); /* Degradê do céu de cima para baixo */
+    position: relative; /* Necessário para o posicionamento do sol */
+    overflow: hidden; /* Evita que qualquer conteúdo ultrapasse a tela */
+}
+
+/* Estilo para o céu */
+#ceu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #007bff, #ffffff); /* Degradê de cima para baixo */
+    z-index: -1; /* Move o céu para o fundo */
+}
+
+/* Estilo para o sol */
+#sol {
+    width: 150px;
+    height: 150px;
+    background-color: #FFFF00;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%; /* Posição no topo */
+    right: 5%; /* Posição à direita */
+    z-index: 1; /* Mantém o sol acima do céu */
+}
+
+/* Estilo para as formas geométricas */
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Posiciona as formas na parte inferior */
+    width: 100%;
+    margin-bottom: 50px; /* Ajusta a margem inferior para separação das formas da borda */
+}
+
+#quadrado, #triangulo, #circulo, #estrela, #coracao {
+    margin: 20px;
+}
+
+/* Forma quadrada */
+#quadrado {
+    width: 100px;
+    height: 100px;
+    background-color: #FF0000;
+    border: 5px solid #000000;
+}
+
+/* Forma triangular */
+#triangulo {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #00FF00;
+}
+
+/* Forma circular */
+#circulo {
+    width: 100px;
+    height: 100px;
+    background-color: #FFFF00;
+    border-radius: 50%;
+}
+
+/* Estrela */
+#estrela {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Coração */
+#coracao {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: #FF0000;
+    transform: rotate(-45deg);
+}
+
+#coracao::before,
+#coracao::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: #FF0000;
+    border-radius: 50%;
+}
+
+#coracao::before {
+    top: -50px;
+    left: 0;
+}
+
+#coracao::after {
+    top: 0;
+    left: 50px;
+}
+
