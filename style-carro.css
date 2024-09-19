@@ -1,0 +1,137 @@
+/* Estilo básico da página */
+body {
+    background-color: #87CEEB; /* Céu azul como fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contêiner do carro */
+#container {
+    position: relative;
+    width: 300px;
+    height: 80px;
+    background-color: red; /* Cor principal do carro */
+    border-radius: 20px; /* Bordas arredondadas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Sombra suave no carro */
+    transform: scale(1.2); /* Escala para dar um visual maior */
+}
+
+/* Corpo do carro */
+#corpo-carro {
+    position: absolute;
+    width: 300px;
+    height: 60px;
+    background-color: red;
+    border-radius: 20px 20px 5px 5px;
+    top: 20px;
+    left: 0;
+}
+
+/* Teto do carro */
+#teto {
+    position: absolute;
+    width: 140px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50px 50px 0 0;
+    top: -20px;
+    left: 80px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra interna no teto */
+}
+
+/* Janelas laterais (ângulos esportivos) */
+.janela {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    background-color: lightblue;
+    border-radius: 3px;
+    top: -10px;
+    border: 2px solid black; /* Bordas das janelas */
+    transform: skewX(-15deg); /* Inclinação para um visual esportivo */
+}
+
+#janela-esquerda {
+    left: 90px;
+}
+
+#janela-direita {
+    right: 90px;
+}
+
+/* Para-choque */
+#para-choque {
+    position: absolute;
+    width: 80px;
+    height: 10px;
+    background-color: black;
+    bottom: 5px;
+    right: 0;
+    border-radius: 5px; /* Bordas arredondadas do para-choque */
+}
+
+/* Faróis */
+.farol {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    bottom: 10px;
+}
+
+#farol-esquerdo {
+    left: 10px;
+}
+
+#farol-direito {
+    right: 10px;
+}
+
+/* Rodas */
+.roda {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    border-radius: 50%; /* Rodas circulares */
+    bottom: -30px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8); /* Efeito interno para os pneus */
+}
+
+/* Detalhes nas rodas */
+.roda::before {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: gray;
+    border-radius: 50%;
+    top: 12px;
+    left: 12px;
+}
+
+#roda-esquerda {
+    left: 40px;
+}
+
+#roda-direita {
+    right: 40px;
+}
+
+/* Spoiler traseiro */
+#spoiler {
+    position: absolute;
+    width: 80px;
+    height: 10px;
+    background-color: black;
+    top: -10px;
+    right: 10px;
+    border-radius: 0 0 10px 10px;
+}

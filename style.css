@@ -1,90 +1,82 @@
-/* Define o estilo básico para o body */
 body {
     margin: 0;
     padding: 0;
-    height: 100vh; /* Altura total da tela */
+    height: 100vh;
     display: flex;
-    flex-direction: column; /* Permite alinhar elementos no eixo vertical */
-    justify-content: flex-end; /* Mantém as formas na parte inferior */
-    align-items: center; /* Centraliza horizontalmente */
-    background: linear-gradient(to bottom, #007bff, #00C8FF); /* Degradê do céu de cima para baixo */
-    position: relative; /* Necessário para o posicionamento do sol */
-    overflow: hidden; /* Evita que qualquer conteúdo ultrapasse a tela */
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background: linear-gradient(to bottom, #007bff, #00C8FF);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Estilo para o céu */
 #ceu {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #007bff, #ffffff); /* Degradê de cima para baixo */
-    z-index: -1; /* Move o céu para o fundo */
+    background: linear-gradient(to bottom, #007bff, #ffffff);
+    z-index: -1;
 }
 
-/* Estilo para o sol */
 #sol {
-    width: 150px;
-    height: 150px;
+    width: 15vw;
+    height: 15vw;
     background-color: #FFFF00;
     border-radius: 50%;
     position: absolute;
-    top: 5%; /* Posição no topo */
-    right: 5%; /* Posição à direita */
-    z-index: 1; /* Mantém o sol acima do céu */
+    top: 5%;
+    right: 5%;
+    z-index: 1;
 }
 
-/* Estilo para as formas geométricas */
 #container {
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Posiciona as formas na parte inferior */
-    width: 100%;
-    margin-bottom: 50px; /* Ajusta a margem inferior para separação das formas da borda */
+    align-items: flex-end;
+    width: 90%;
+    margin-bottom: 5vh;
+    flex-wrap: wrap;
 }
 
 #quadrado, #triangulo, #circulo, #estrela, #coracao {
-    margin: 20px;
+    margin: 2vw;
 }
 
-/* Forma quadrada */
 #quadrado {
-    width: 100px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
     background-color: #FF0000;
-    border: 5px solid #000000;
+    border: 0.5vw solid #000000;
 }
 
-/* Forma triangular */
 #triangulo {
     width: 0;
     height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid #00FF00;
+    border-left: 5vw solid transparent;
+    border-right: 5vw solid transparent;
+    border-bottom: 10vw solid #00FF00;
 }
 
-/* Forma circular */
 #circulo {
-    width: 100px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
     background-color: #FFFF00;
     border-radius: 50%;
 }
 
-/* Estrela */
 #estrela {
-    width: 100px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
     background-color: yellow;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 
-/* Coração */
 #coracao {
-    width: 100px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
     position: relative;
     background-color: #FF0000;
     transform: rotate(-45deg);
@@ -93,20 +85,64 @@ body {
 #coracao::before,
 #coracao::after {
     content: '';
-    width: 100px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
     position: absolute;
     background-color: #FF0000;
     border-radius: 50%;
 }
 
 #coracao::before {
-    top: -50px;
+    top: -5vw;
     left: 0;
 }
 
 #coracao::after {
     top: 0;
-    left: 50px;
+    left: 5vw;
 }
 
+#seta-direita {
+    width: 0;
+    height: 0;
+    border-top: 5vw solid transparent;
+    border-bottom: 5vw solid transparent;
+    border-left: 10vw solid #FF0000;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 1;
+}
+
+#seta-direita::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -16vw;
+    width: 7.5vw;
+    height: 2vw;
+    background-color: #FF0000;
+    transform: translateY(-50%);
+}
+
+#botao-oval {
+    width: 15vw;
+    height: 5vw;
+    background-color: #FF8C00;
+    border-radius: 25px;
+    position: absolute;
+    top: 10%;
+    left: 18%;
+    z-index: 2;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.8vw;
+    font-family: Arial, sans-serif;
+}
+
+#botao-oval:hover {
+    background-color: #FFA500;
+}
